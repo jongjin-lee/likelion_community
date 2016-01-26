@@ -1,0 +1,46 @@
+
+<h2>학교 메일을 입력해주세요</h2>
+<hr>
+
+<%= current_user.email %>로 인증메일을 보내시겠습니까?
+<button type="submit" id="kkk">확인</button>
+
+<script>
+$('#kkk').click(function(){
+    alert("메일이 전송되었습니다");
+    location.href = "/system/send_mail";
+});
+</script>
+
+
+<br>                  
+<br>
+
+메일로 전송된 인증코드를 입력해주세요 
+<!--
+<form action = "/system/authenticate_process" method="POST">
+    <input type="text" name="input_code" placeholder="인증코드" required autofocus> 
+    <input type="submit" value="확인">
+</form>
+-->
+<% if current_user.authentication == 0 %>    
+    <form action = "/system/test_confirm" method="POST">
+        <input type="text" name="rrr" id="rrr" placeholder="인증코드">
+        <input type="submit" name"zzz" id="zzz" value="확인">
+    </form>
+<% else %>
+<br>
+인증 실패 : OO회 <!-- 인증실패횟수 카운트해서 찍고싶음 --> / 나중엔 실패횟수 찍을 수 있게
+    <form action = "/system/test_confirm" method="POST">
+        <input type="text" name="rrr" id="rrr" placeholder="인증코드">
+        <input type="submit" name"zzz" id="zzz" value="확인">
+    </form>
+<% end %>
+
+<!--
+<script>
+$('#zzz').click(function(){
+    <!--%= @sum = @sum + 1 %>
+});
+</script>
+-->

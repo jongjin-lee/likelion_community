@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>성균관대학교 멋쟁이사자처럼</title>  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'imagesloaded.pkgd.min.js'=> true %>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  
+  <%= csrf_meta_tags %>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/ico" href="/image/favicon.png"/>
+  
+  
+<!-- 헤카톤 페이지에서 따온 코드 -->  
+  <!-- Latest compiled and minified CSS -->  
+  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  
+  
+  <!-- Optional theme -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  
+  
+  
+  <!-- 디자인 추가 -->  
+    <meta property="og:image" content="http://www.coverr.co/media/cover-meta.png"/>
+    <meta name="google-site-verification" content="PUIw6OhsS-xx6WGCH6u_H8ISVMLVvj7VTgvFNXF-KqA" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <style>.ig-b- { display: inline-block; }
+    .ig-b- img { visibility: hidden; }
+    .ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
+    .ig-b-v-24 { width: 137px; height: 24px; background: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+        .ig-b-v-24 { background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; } }
+    </style>
+      
+    <script src="/javascripts/imagesloaded.pkgd.min.js"></script>
+    <script src="/javascripts/imagesloaded.pkgd.min.js"></script>
+    
+
+<!-- 오리지널 강평에서 따온 코드 -->    
+    
+      <!-- 부트스트랩 -->
+    <link rel="stylesheet" type='text/css' href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" type='text/css' href="/assets/fonts/font-awesome/css/font-awesome.css">
+
+    <!-- 슬라이드 카로우셀 -->
+    <link href="/assets/css/owl.carousel.css" rel="stylesheet" media="screen">
+    <link href="/assets/css/owl.theme.css" rel="stylesheet" media="screen">
+
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" type='text/css' href="/assets/css/style.css">
+    <link rel="stylesheet" type='text/css' href="/assets/css/responsive.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="/assets/js/modernizr.custom.js"></script>
+  
+</head>
+
+
+
+<body id="<%= params[:controller].parameterize %>_controller" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="back_all"> <!-- 임시 navbar 위한 여백 -->
+
+
+<body>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+
+
+      <nav class="navbar navbar-inverse navbar-fixed-top" style = "height: 85px; ">
+      <div class="container" style="width: 93%;">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+          <a  class="navbar-brand page-scroll" href="/main/main" style="padding-left: 5px;">
+            <image id="top_logo" src="/image/logo.png" width="250px"  style="padding-top: 3px;">
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+            <% if user_signed_in? %>
+                <% if current_user.authentication == 1 or current_user.authentication == 3 %> 
+                    <li style="padding-top: 34px;"><span style = "color: #42c59f"> <%= "[인증완료]" + current_user.name %> 님 환영합니다&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                    <li></li>
+                  <!--  <li><a href="/system/myinfo" style="padding-top: 34px; color: #299676">내정보</a></li> -->
+                    <li><a href="/board/notice" style="padding-top: 34px; color: #299676">공지게시판</a></li>
+                    <li><a href="/board/freeboard" style="padding-top: 34px; color: #299676">자유게시판</a></li>
+                    <li><a href="/users/sign_out" style="padding-top: 34px; color: #299676">로그아웃</a></li>
+                <% else %>
+                    <li style="padding-top: 34px;"><span style = "color: #42c59f"><%= "[미인증]" + current_user.name %> 님 환영합니다&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                    <li></li>
+                    <li><a href="/system/authenticate" style="padding-top: 34px; color: #299676">학교인증</a></li>
+                      <li><a href="/board/notice" style="padding-top: 34px; color: #299676">공지게시판</a></li>
+                    <li><a href="/board/freeboard" style="padding-top: 34px; color: #299676">자유게시판</a></li>
+                    <li><a href="/users/sign_out" style="padding-top: 34px; color: #299676">로그아웃</a></li>
+                <% end %>
+            <%else%>
+                <li><a href="/users/sign_in" style="padding-top: 34px; color: #299676">로그인</a></li>
+                <li><a href="/users/sign_up" style="padding-top: 34px; color: #299676">회원가입</a></li>              
+            <%end%>
+          </ul>
+
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+<!--
+ <div id="top"></div>
+      <div class="row-table row-full-height text-center" style="position:relative; width:100%; background-image: url('/image/01.jpg');  background-size: cover;">
+      <div class="row-table row-full-height text-center" style="position:relative; width:100%; background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%);">
+        <div class="col-sm-12 col-middle" style="margin-top:5%; margin-bottom:auto; text-align:center;">      
+            
+        
+            <div class="content">
+                <img src="img/eva.png" style="width: 100px; margin-top: 5px" align="center">
+                <h1>성균관대학교 <strong><span class="color">강의평가</span></strong></h1>
+                <p class="lead"> 가볍고 <strong> 정확하게 </strong> 그리고 <strong> 솔직한 </strong></p>
+                <div class="col-xs-12 col-md-12 col-lg-12">           
+                    <form action="/test/finding_test_result" method = "get"> 
+                        <input type="text" name="searching" class="form-control">
+                          <br>
+                        <button class="btn tf-btn btn-default"> 검색 </button>
+                    </form>
+                </div>
+            </div>
+        
+            
+        </div>
+      </div>
+      </div>
+</div>
+-->
+
+
+    <div id="tf-home" class="text-center">
+        <div class="overlay">
+            
+            <!--
+            <div class="content">
+                <img src="../assets/img/eva.png" style="width: 100px; margin-top: 5px" align="center">
+                <h1>성균관대학교  <strong><span class="color">강의평가</span></strong></h1>
+                <p class="lead"> 가볍고 <strong> 정확하게 </strong> 그리고 <strong> 솔직한 </strong></p>
+
+                <div class="col-xs-12 col-md-12 col-lg-12">           
+                <form action="/test/finding_test_result" method = "get"> 
+                  <input type="text" name="searching" class="form-control">
+                  <br>
+                  <button class="btn tf-btn btn-default"> 검색 </button>
+                </form>
+                </div>
+            </div>
+            -->
+            
+        </div>
+    </div>

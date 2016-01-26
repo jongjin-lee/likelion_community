@@ -1,0 +1,62 @@
+<%= render :partial => "/board/navbar" %>
+    
+<div class="col-md-12" style="height:auto;; text-align:center; border-top: 2px solid #b7b7b7; border-bottom: 1px solid #b7b7b7; background-color: #e5e5e5; margin:100px 0px 0px 0px;"> 
+    <div style="padding: 27px 0px 30px 0px;">
+      <span style="font-weight: 800; color:#727272; font-size: 120%;">자유게시판 |</span> 
+      <span style="font-weight: 500;color:#b2b2b2; font-size: 120%;">&nbsp;자유롭게 의견을 나누세요</span>
+    </div>
+</div>
+    
+     
+<div class="col-md-8 col-md-offset-2 col-sm-12 co-xs-12">
+    <div class="form-style-10" style="padding: 45px 0px 45px 0px;">
+      
+    <div class="section" style="padding-left: 40px; color: #299676; font-size: 150%;"> 자유게시판</div>  
+        <div class="inner-wrap">
+            <div class="row" id="notice_onclick" style="border-bottom: 1px #b5b5b5 solid; text-align: center; padding: 0px 10px 15px 0px;">        
+                <div class="col-md-2 col-xs-2 col-sm-12" style="padding-left: 0px; font-weight: 800; color: #299676;">번호</div>
+                <div class="col-md-6 col-xs-4 col-sm-12 " style=" word-break: break-all;  text-align: left; padding-left: 0px; word-break: break-all;  font-weight: 800; color: #299676;">제목</div>
+                <div class="col-md-2 col-xs-3 col-sm-12" style="font-weight: 800; color: #299676;">작성자</div>
+                <div class="col-md-2 col-xs-3 col-sm-12" style="font-weight: 800; color: #299676;">시간</div>
+            </div>
+
+            <br>
+                             
+            <div class="row" id="freeboard_onclick" style="  padding: 0px 10px 0px 0px; text-align: center;">  
+                <div class="col-md-2 col-xs-2 col-sm-12" style="padding-left: 0px; font-weight: 500; color: #303130;"><%=@this_article.id%></div>
+                <div class="col-md-6 col-xs-4 col-sm-12 " style="text-align: left;  padding-left: 0px; font-weight: 500; color: #303130;"> <%= @this_article.free_title %></div>
+                <div class="col-md-2 col-xs-3 col-sm-12" style="font-weight: 500; color: #303130;"><%=@this_article.free_writer%></div>
+                <div class="col-md-2 col-xs-3 col-sm-12" style="font-weight: 800; color: #303130;"><%=@this_article.created_at.in_time_zone("Seoul").strftime("%Y/%m/%d")%></div><br>
+    
+                <hr style="margin: 5px;     width: 100%;">
+            </div>
+                     
+            <br>
+            
+            <div style=" word-break:break-all; height: auto; padding: 25px; text-align:left;">
+                <%= @this_article.free_content.gsub( /\n/, '<br />').html_safe %>
+            </div>
+                             
+            <hr style="margin: 5px;     width: 100%;">
+        </div>
+            
+        <div style="text-align: center;" style="margin-top:50px;">
+            <a class="button-section"  style = "text-align:center;"href="/board/freeboard">
+                <input type="button"  value="목록">                 
+            </a>
+               
+            <%unless current_user.nil?%>
+                <%if current_user.name==@this_article.free_writer%>
+                    <a class="button-section"  href="/board/freeboard_modify/<%=@this_article.id%>">
+                        <input type="button"  value="수정">                 
+                    </a>
+              
+                    <a class="button-section"  href="/board/freeboard_delete/<%=@this_article.id%>">
+                        <input type="button" value="삭제">                 
+                    </a>
+                <%end%>
+            <%end%>
+        </div>
+    </div>
+</div>
+    
